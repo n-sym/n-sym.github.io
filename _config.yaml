@@ -1,4 +1,4 @@
 theme: jekyll-theme-minimal
 title: n-sym's Blog
 description: Test
-markdown: kramdown
+markdown: GFM
