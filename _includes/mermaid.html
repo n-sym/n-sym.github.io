@@ -1,0 +1,67 @@
+<script>
+    function render_mermaid() {
+        const mermaidElements = document.querySelectorAll('.language-mermaid');
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: "default",
+            securityLevel: 'loose'
+        });
+        mermaid.run({
+            nodes: mermaidElements,
+            postRenderCallback: (id) => {
+                const element = document.getElementById(id);
+                MathJax.typesetPromise([element]).then(() => {
+                    const formulas = element.querySelectorAll('mjx-container');
+                    formulas.forEach(formula => {
+                        const formulaWidth = formula.scrollWidth;
+                        const formulaHeight = formula.scrollHeight;
+                        const container = formula.closest('foreignObject');
+                        const parentDiv = formula.closest('div');
+                        if (!container) return;
+                        formula.style.fontSize = '100%';
+                        formula.style.margin = '0'; 
+                    });
+                });
+            }
+        });
+        MathJax.typeset();
+    }
+
+    function initialize_mermaid() {
+        if (document.readyState === "loading") {
+            // Loading hasn't finished yet
+            document.addEventListener("DOMContentLoaded", render_mermaid);
+        } else {
+            // `DOMContentLoaded` has already fired
+            render_mermaid();
+        }
+    }
+
+    if (window.mermaid_script && window.mermaid) {
+        initialize_mermaid();
+    } else {
+        window.MathJax = {
+            tex: {
+                inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            startup: {
+                pageReady: () => {}
+            }
+        };
+        window.mermaid_script = document.createElement("script");
+        window.mathjax_script = document.createElement("script");
+        mermaid_script.onload = initialize_mermaid;
+        mathjax_script.onload = initialize_mermaid;
+        document.head.appendChild(mathjax_script);
+        document.head.appendChild(mermaid_script);
+        mermaid_script.defer = true;
+        mermaid_script.id = 'mermaid-script';
+        mermaid_script.src = 'https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js';
+        mathjax_script.defer = true;
+        mathjax_script.id = 'MathJax-script';
+        mathjax_script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    }
+</script>

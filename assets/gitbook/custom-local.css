@@ -1,0 +1,65 @@
+.book.font-family-0 {
+  font-family: "Noto Serif SC", sans-serif;
+}
+.book.font-family-1 {
+  font-family: "Noto Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.book .book-summary ul.summary {
+  font-family: "Noto Serif SC", sans-serif;
+}
+.book .book-summary ul.summary li.active > a {
+  color: #9c7ac4;
+  background: transparent;
+  font-weight: bold;
+}
+h1, h2 {
+  font-family: "Noto Serif SC", Georgia, "Times New Roman", Times, serif;
+}
+.markdown-section pre, .markdown-section code {
+  font-family: 'Cascadia Code', Consolas, monospace, "Noto Sans SC";
+}
+
+.back-to-top {
+  background: rgba(178, 159, 201, 0.6);
+}
+.back-to-top:hover {
+  background: rgba(178, 159, 201, 0.9);
+  cursor: pointer;	
+}
+
+#book-search-input,
+#book-search-input-link {
+  padding-left: 24px;
+}
+
+.avatar-container-active {
+  width: 50%;
+  max-width: 150px;
+  margin: 0 auto;
+}
+
+.my-avatar-active {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover; 
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+}
+
+.my-avatar {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 25px;
+}
+
+.book-summary {
+  background: hsl(267, 12%, 97%);
+}
