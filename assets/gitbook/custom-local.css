@@ -20,11 +20,30 @@ h1, h2 {
 }
 
 .back-to-top {
-  background: rgba(178, 159, 201, 0.6);
+  text-align: center;
+  background: hsla(267, 18%, 61%, 0.6);
 }
 .back-to-top:hover {
-  background: rgba(178, 159, 201, 0.9);
+  background: hsla(267, 18%, 81%, 0.7);
   cursor: pointer;	
+}
+.back-to-top span {
+  color: #fff;
+  font-size: 22px;
+}
+
+.copy-code-button {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+.copy-code-button:hover {
+  background-color: rgba(126, 126, 126, 0.205);
 }
 
 #book-search-input,
@@ -36,6 +55,7 @@ h1, h2 {
   width: 50%;
   max-width: 150px;
   margin: 0 auto;
+  padding-top: 6px;
 }
 
 .my-avatar-active {
@@ -49,6 +69,7 @@ h1, h2 {
 .avatar-container {
   display: flex;
   align-items: center;
+  padding-bottom: 3px;
 }
 
 .my-avatar {
@@ -62,4 +83,8 @@ h1, h2 {
 
 .book-summary {
   background: hsl(267, 12%, 97%);
+}
+
+.material-symbols-rounded {
+  line-height: 50px;
 }

@@ -26,3 +26,8 @@ F#，C#，FP，tModLoader，二次元，芙宁娜，开放世界，回合制，�
 很遗憾，我忘记Fork了，只能愚蠢地把文件复制到自己的Repo来修改。
 
 因此，根据Apache-2.0协议，我需要贴上此链接。
+
+```C#
+using System;
+using System.Collections.Generic;
+```

@@ -188,7 +188,9 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
 
         // Create buttons in toolbar
         BUTTON_ID = gitbook.toolbar.createButton({
-            icon: 'fa fa-font',
+            icon: 'material-symbols-rounded',
+            iconText: 'settings',
+            position: 'right',
             label: 'Font Settings',
             className: 'font-settings',
             dropdown: [
