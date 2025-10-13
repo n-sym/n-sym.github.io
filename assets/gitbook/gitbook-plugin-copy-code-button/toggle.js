@@ -53,7 +53,13 @@ require(["gitbook", "jquery"], function (gitbook, $) {
 
     gitbook.events.bind("page.change", function () {
         $("pre").each(function () {
-            $(this).css("position", "relative");
+            var $pre = $(this);
+            if ($pre.parent().hasClass("code-wrapper")) {
+                return;
+            }
+            $pre.wrap('<div class="code-wrapper" style="position: relative;"></div>');
+
+            $pre.css("position", "relative");
 
             var copyIcon = "<div class='copy-code-button'><span class=\"material-symbols-rounded\" style=\"line-height: normal\">content_copy</span></div>";
             var copiedIcon = "<div class='copy-code-button'><span class=\"material-symbols-rounded\" style=\"line-height: normal\">check</span></div>";
@@ -83,7 +89,7 @@ require(["gitbook", "jquery"], function (gitbook, $) {
                 }
             });
 
-            $(this).append($copyCodeButton);
+            $pre.parent().append($copyCodeButton);
         });
     });
 });
