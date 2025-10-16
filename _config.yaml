@@ -11,7 +11,7 @@ toc:
   h_max:   3
 
 # customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
-favicon_path: /assets/avatar0.png
+favicon_path: assets/avatar0.png
 
 # markdown render engine.
 markdown: CommonMark
