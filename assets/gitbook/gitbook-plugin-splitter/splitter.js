@@ -121,7 +121,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
 			// improved broken layout in windows chrome.
 			//   "$(x).offset" automatically add to "position:relative".
 			//   but it cause layout broken..
-			$summary.css({ position: 'absolute' });
+			$summary.css({ position: 'fixed' });
 			$bookBody.css({ position: 'absolute' });
 		}
 	});

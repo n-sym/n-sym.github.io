@@ -1,0 +1,68 @@
+/* .book .book-summary .chapter > .articles { */
+.book .book-summary .chapter ul {
+	overflow: hidden;
+	max-height: 0px;
+}
+
+.book .book-summary .chapter li > ul {
+	overflow: hidden;
+	max-height: 0px !important;
+}
+
+/* .book .book-summary .chapter.expanded > .articles { */
+.book .book-summary .chapter.expanded ul {
+	max-height: 9999px;
+}
+
+.book .book-summary .chapter.expanded li.expanded > ul {
+	max-height: 9999px !important;
+}
+
+.book .book-summary .exc-trigger {
+	position: absolute;
+  	left: 12px;
+  	top: 12px;
+}
+
+.book .book-summary ul.summary li a,
+.book .book-summary ul.summary li span {
+	padding-left: 28px;
+}
+
+.book .book-summary .exc-trigger:before {
+  	/* content: "\f105"; */
+}
+
+.book .book-summary .expanded > a .exc-trigger:before,
+.book .book-summary .expanded > span .exc-trigger:before {
+	/* content: "\f107"; */
+}
+
+.book .book-summary .nav-tocs .material-symbols-rounded {
+	padding: 0 !important;
+	position: absolute;
+  	left: 4px;
+  	top: 5.5px;
+	font-size: 24px;
+	rotate: unset;
+	transform-origin: center;
+	-webkit-transition: rotate .3s ease;
+	-moz-transition: rotate .3s ease;
+	-o-transition: rotate .3s ease;
+	transition: rotate .3s ease;
+}
+
+.book .book-summary .nav-tocs .expanded > a .material-symbols-rounded,
+.book .book-summary .nav-tocs .expanded > span .material-symbols-rounded {
+  	top: 6px;
+	rotate: 90deg;
+}
+
+
+/* .book .book-summary .nav-tocs .chapter.active.expanded {
+	border: 1px solid hsl(268, 39%, 62%);
+} */
+
+.book .book-summary .nav-tocs .expanded {
+  	max-height: 5000px;
+}

@@ -5547,7 +5547,7 @@
         function a(e) {
             var t = p("<div>", {
                 class: "dropdown-menu",
-                html: '<div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div>'
+                html: ''//'<div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div>'
             });
             if ("string" == typeof e)
                 t.append(e);

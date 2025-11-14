@@ -32,7 +32,40 @@
 </div>
 
 
+<script>
+    function addTitleListener() {
+        const header = document.querySelector('.book-header');
+        const mainTitle = document.querySelector('.normal.markdown-section h1');
+        if (!header || !mainTitle) {
+            return;
+        }
 
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                header.classList.remove('title-visible');
+            } else {
+                header.classList.add('title-visible');
+            }
+            console.log(entry);
+            });
+        };
+        const observerOptions = {
+            root: null,
+            threshold: 0,
+            rootMargin: "-70px 0px 0px 0px"
+        };
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        observer.observe(mainTitle);
+    }
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", addTitleListener);
+    } else {
+        // `DOMContentLoaded` has already fired
+        addTitleListener();
+    }
+</script>
 <!-- introduce per-page mermaid support -->
 {% if page.mermaid %}
     {% include mermaid.html %}
