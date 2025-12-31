@@ -288,3 +288,8 @@ html {
 .book-summary ul.summary li a:focus {
   outline: none;
 }
+
+.book-summary ul.summary li.divider {
+  margin-left: 10px;
+  margin-right: 10px;
+}
